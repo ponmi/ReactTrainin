@@ -128,6 +128,7 @@ import MyStore from './column/MyStore';
 
 // ■■Original■■
 import RadioMemo from './original/RadioMemo';
+import TextFormRender from './original/TextFormRender';
 /* eslint-enable no-unused-vars */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -781,10 +782,15 @@ root.render(
 // );
 // #endregion
 
+// root.render(
+//     <RadioMemo />
+//   );
+
 root.render(
-    <RadioMemo />
-  );
-  
+  <>
+   <TextFormRender />
+   </>
+ );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

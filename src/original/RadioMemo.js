@@ -6,30 +6,38 @@ import Radio from './Radio';
 
 
 export default function RadioMemo() {
+    const [selectedRadio, setSelectedRadio] = useState({
+        radioYesOrNo: 'yes'
+    });
+ 
+    const handleRadio = e => {
+        setSelectedRadio({
+            ...selectedRadio,
+            [e.target.name]: e.target.value
+            // answer: e.target.value
+        });
+    };
 
-    // const showDialog = useMemo(() => {
-    //     alert('これはアラートです');
-    // }, [radio]);
     return (
         <>
             <form>
-                <div class="radio-wrap">
+                <div className="radio-wrap">
                     <Radio
-                        id="radioYes"
-                        name="radioYesOrNo"
-                        value="yes"
-                        isChecked={true}
-                        radioLabelFor="yes"
+                        radioId="radioYes"
+                        radioName="radioYesOrNo"
+                        radioValue="yes"
+                        isChecked={selectedRadio.radioYesOrNo === 'yes'}
                         radioLabel="Yes"
+                        onChange={handleRadio}
                     >
                     </Radio>
                     <Radio
-                        id="radioNo"
-                        name="radioYesOrNo"
-                        value="no"
-                        isChecked={false}
-                        radioLabelFor="no"
+                        radioId="radioNo"
+                        radioName="radioYesOrNo"
+                        radioValue="no"
+                        isChecked={selectedRadio.radioYesOrNo === 'no'}
                         radioLabel="No"
+                        onChange={handleRadio}
                     >
                     </Radio>
                 </div>
@@ -37,3 +45,4 @@ export default function RadioMemo() {
         </>
     );
 }
+

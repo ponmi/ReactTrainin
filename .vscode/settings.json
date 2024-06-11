@@ -1,0 +1,24 @@
+{
+    "files.associations": {
+        "*.tsx": "typescript"
+      },
+      "code-runner.runInTerminal": true,
+      "code-runner.executorMap": {
+        "javascript": "clear; node",
+        "typescript": "clear; ts-node"
+      },
+      "terminal.integrated.env.windows": {
+        "PSExecutionPolicyPreference": "RemoteSigned"
+      },
+      "eslint.useESLintClass": true,
+      "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "html"
+      ],
+      "htmlhint.enable": true,
+      "spellright.language": ["en", "ja"],
+      "spellright.documentTypes": ["markdown", "latex", "plaintext"]
+}

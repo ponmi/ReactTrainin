@@ -1,16 +1,13 @@
 import { useMemo, useState } from 'react';
 
-export default function Radio({ radioId, radioName, radioValue, isChecked, radioLabel, radioLabelFor}) {
-    const [radio, setRadio] = useState({
-        answer: 'yes'
-});
-
-const handleRadio = e => {
-    setRadio({
-        ...radio,
-        [e.target.name]: e.target.value
-    });
-};
+export default function Radio({
+    radioId,
+    radioName,
+    radioValue,
+    isChecked,
+    radioLabel,
+    onChange
+}) {
 
     return (
         <div>
@@ -20,13 +17,12 @@ const handleRadio = e => {
                 id={radioId}
                 name={radioName}
                 value={radioValue}
-                isChecked
+                checked={isChecked}
+                onChange={onChange}
             />
-            <lable
-                htmlFor={radioLabelFor}
-            >
+            <label htmlFor={radioId}>
                 {radioLabel}
-            </lable>
+            </label>
         </div>
     );
 }
